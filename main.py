@@ -1,30 +1,44 @@
 import pygame
 
-size = width, height = 320, 240
-white = (255, 255, 255)
-black = (0, 0, 0)
-green = (0, 255, 0)
-blue = (0, 0, 128)
 
-pygame.init()
+def home_screen():
+    while 1:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
 
-screen = pygame.display.set_mode(size)
-pygame.display.set_caption('2048')
-font = pygame.font.Font('freesansbold.ttf', 32)
-text = font.render('text', True, black, white)
+        screen.fill(black)
+        screen.blit(text, title)
 
-textRect = text.get_rect()
-textRect.center = (width // 2, height // 2)
+        pygame.display.update()
 
 
-while 1:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            quit()
+def game():
+    while 1:
+        events = pygame.event.get()
 
-    screen.fill(white)
-    screen.blit(text, textRect)
+        for event in events:
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
 
-    pygame.display.update()
+        screen.fill(black)
+
+        pygame.display.update()
+
+
+if __name__ == '__main__':
+
+    size = width, height = 300, 500
+    white = (255, 255, 255)
+    black = (0, 0, 0)
+    green = (0, 255, 0)
+    blue = (0, 0, 128)
+
+    pygame.init()
+
+    screen = pygame.display.set_mode(size)
+
+    home_screen()
 
