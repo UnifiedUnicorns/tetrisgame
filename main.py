@@ -1,5 +1,7 @@
 import pygame
 
+from assets import MultiLineLabel, Label
+
 
 def home_screen():
     while 1:
@@ -9,8 +11,6 @@ def home_screen():
                 quit()
 
         screen.fill(black)
-        screen.blit(text, title)
-
         pygame.display.update()
 
 
